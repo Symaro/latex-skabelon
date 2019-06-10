@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[backend=bibtex, style=alphabetic, sorting=ynt]{biblatex}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\newcommand{\quickcharcount}[1]{%
+  \immediate\write18{texcount -1 -sum -merge -char -q #1.tex output.bbl > #1-chars.sum }%
+  \input{#1-chars.sum} characters (not including spaces)%
+}
+
+\renewcommand{\contentsname}{Indholdsfortegnelse}
+\renewcommand{\figurename}{Figur}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=red
+}
+
+\addbibresource{bibliography.bib}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{John Doe}
+\rfoot{Side \thepage \hspace{1pt} af \pageref{LastPage}}
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        {\huge \textbf{Organisation og Ledelse}}
+        \\SI2-KURSUS
+        \\\vspace{0.5cm}
+        Tællende aktivitet 1
+        
+        \vspace{1.5cm}
+        
+        \textbf{John Doe} - username \\
+        
+        
+        \vspace{8.8cm}
+        
+        \hspace*{1.9cm}
+        \includegraphics[width=0.3\textwidth]{assets/SDU_BLACK_RGB.png}
+        
+        Teknisk Fakultet \\
+        Syddansk Universitet\\
+        \today
+    \end{center}
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section{Test}
+Placeholder \cite{jones:2013}
+
+\newpage
+\printbibliography[title = {Kilder}]
+\end{document}
