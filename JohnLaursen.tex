@@ -8,11 +8,6 @@
 \usepackage{hyperref}
 \usepackage{float}
 
-\newcommand{\quickcharcount}[1]{%
-  \immediate\write18{texcount -1 -sum -merge -char -q #1.tex output.bbl > #1-chars.sum }%
-  \input{#1-chars.sum} characters (not including spaces)%
-}
-
 \renewcommand{\contentsname}{Indholdsfortegnelse}
 \renewcommand{\figurename}{Figur}
 
@@ -45,7 +40,7 @@
         
         \textbf{John Laursen} - jaur13 \\
         \vspace{2cm}
-        Antal anslag:
+        Antal anslag: 13920
         \vspace{12cm}
         
         \hspace*{1.9cm}
@@ -60,7 +55,7 @@
 \newpage
 \include{innovation-og-produktudvikling}
 \clearpage
-\section{Spørgsmål 2}
+\include{organisationsstruktur}
 
 \newpage
 \printbibliography[title = {Kilder}]
